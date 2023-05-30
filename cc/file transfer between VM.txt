@@ -1,0 +1,24 @@
+first do login in both virtual machines 
+
+then use following command ->  ifconfig
+
+
+to check if already there is some file in VM use -> ls 
+
+now create one file in VM1  -> touch abc.txt
+then add content -> nano abc.txt 
+ 
+after adding content use crtl+s to save our file .
+then we have to click crtl+x 
+
+you should use cat command to know then content is there inside or not 
+
+Now we have to transfer the file -> 
+   scp abc.txt login_username@IP_of_VM2:/home/login_username
+
+  eg -> scp abc.txt wagrant@10.0.2.16:/home/wagrant
+
+
+after running this above command it show 100% with file name.
+then it means you succefully transfer the file 
+now go to VM2 and run ls command and cat abc.txt command 
