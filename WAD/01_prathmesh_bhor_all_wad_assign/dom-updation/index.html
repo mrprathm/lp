@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Updating DOM using jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Wait for the document to be fully loaded and ready
+
+        // Function to update the text on button click
+        $("#updateButton").click(function () {
+          // Update the text of the paragraph
+          $("#message").text("Hello, jQuery!");
+
+          // Add a new element dynamically
+          $("<p>").text("This is a new paragraph").appendTo("#container");
+        });
+
+        // Function to change background color on button click
+        $("#changeColorButton").click(function () {
+          // Change the background color of the container
+          $("#container").css("background-color", "lightblue");
+        });
+
+        // Function to remove a paragraph on button click
+        $("#removeButton").click(function () {
+          // Remove the first paragraph inside the container
+          $("#container p:first").remove();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>DOM Updating Example</h1>
+      <p id="message">Initial text</p>
+      <button id="updateButton">Update Text</button>
+      <button id="changeColorButton">Change Color</button>
+      <button id="removeButton">Remove Paragraph</button>
+    </div>
+  </body>
+</html>
